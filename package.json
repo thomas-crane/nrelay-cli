@@ -1,0 +1,50 @@
+{
+  "name": "nrelay-cli",
+  "version": "1.0.0",
+  "description": "A CLI for creating and running nrelay projects.",
+  "main": "lib/index.js",
+  "preferGlobal": true,
+  "bin": {
+    "nrelay": "lib/index.js"
+  },
+  "files": [
+    "assets/",
+    "lib/",
+    "license.md"
+  ],
+  "scripts": {
+    "compile": "tsc -p .",
+    "lint": "tslint -p ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomas-crane/nrelay-cli.git"
+  },
+  "keywords": [
+    "nrelay",
+    "rotmg",
+    "cli",
+    "typescript"
+  ],
+  "author": "tcrane",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thomas-crane/nrelay-cli/issues"
+  },
+  "homepage": "https://github.com/thomas-crane/nrelay-cli#readme",
+  "devDependencies": {
+    "@types/execa": "^0.9.0",
+    "@types/listr": "^0.13.0",
+    "@types/node": "^11.12.2",
+    "@types/yargs": "^12.0.10",
+    "tslint": "^5.14.0",
+    "typescript": "^3.4.1"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "execa": "^1.0.0",
+    "listr": "^0.14.3",
+    "nrelay": "^8.0.1-rc",
+    "yargs": "^13.2.2"
+  }
+}

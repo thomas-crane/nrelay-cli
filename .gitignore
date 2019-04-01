@@ -1,0 +1,5 @@
+# node stuff
+node_modules/
+
+# build result
+lib/
