@@ -1,0 +1,8 @@
+[
+  {
+    "alias": "Main Client",
+    "guid": "example@email.com",
+    "password": "password10",
+    "serverPref": "Australia"
+  }
+]

@@ -1,0 +1,5 @@
+Project generated on: {{date}}
+Generated using nrelay-cli version: {{version}}
+
+This file tells the nrelay CLI that this folder contains an nrelay project.
+Removing it may cause difficulties when trying to use the nrelay cli to interact with this project.

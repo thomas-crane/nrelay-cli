@@ -1,0 +1,7 @@
+{
+  "name": "{{name}}",
+  "private": true,
+  "scripts": {
+    "compile": "tsc -p ."
+  }
+}
