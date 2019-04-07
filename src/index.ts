@@ -5,6 +5,7 @@ import { existsSync } from 'fs';
 import yargs from 'yargs';
 import { build } from './commands/build';
 import { eject } from './commands/eject';
+import { fix } from './commands/fix';
 import { newCmd } from './commands/new';
 import { run } from './commands/run';
 import * as fsUtil from './util/fs-util';
@@ -43,11 +44,18 @@ yargs
     return args
       .option('update', {
         default: true,
+        type: 'boolean',
         describe: 'Check for updates',
       })
       .option('debug', {
         default: false,
+        type: 'boolean',
         describe: 'Log more information',
+      })
+      .option('force-update', {
+        default: false,
+        type: 'boolean',
+        describe: 'Force an update',
       });
   }, (args: any) => {
     return fsUtil.exists(cwd('.nrelay')).then((exists) => {
@@ -76,7 +84,7 @@ yargs
     newCmd.run(args).then(() => {
       logOk([
         'Created new project.',
-        `Run ${chalk.magenta(`cd ${args.name} && nrelay`)} to get started!`,
+        `Run ${chalk.magenta(`cd ${args.name} && nrelay run`)} to get started!`,
       ]);
     }).catch((err) => {
       logErr(err);
@@ -118,6 +126,16 @@ yargs
       if (err.name === 'NOT_NRELAY_PROJECT') {
         logErr('Use --force to eject this project anyway.');
       }
+    });
+  })
+  .command('fix', 'Ensures that a project folder is valid.', () => undefined, () => {
+    fix.run().then(() => {
+      logOk([
+        'Project folder fixed.',
+        `Run ${chalk.magenta('nrelay run')} to get started!`,
+      ]);
+    }).catch((err) => {
+      logErr(err);
     });
   })
   .demandCommand(1, 'Please provide a command to invoke.')
