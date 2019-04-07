@@ -1,4 +1,4 @@
-import { Client, Library, PacketHook, TextPacket, PlayerTextPacket } from 'nrelay';
+import { Client, Library, PacketHook, PlayerTextPacket, TextPacket } from 'nrelay';
 
 // The Library decorator gives nrelay some information about
 // your plugin. If it is not present, nrelay won't load the plugin.
@@ -26,7 +26,7 @@ class HelloPlugin {
         reply.text = '/tell ' + textPacket.name + ' Hello!';
 
         // Send the reply.
-        client.packetio.sendPacket(reply);
+        client.io.send(reply);
       }
     }
   }
