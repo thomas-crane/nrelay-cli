@@ -10,6 +10,8 @@ A command line interface for generating and running nrelay projects.
   + [run](#run)
   + [build](#build)
   + [eject](#eject)
+  + [fix](#fix)
+  + [update](#update)
 
 ## Install
 
@@ -72,3 +74,23 @@ node index
 ```
 
 Instead of the usual run command (the run command will still work, though).
+
+### fix
+
+The fix command can be used to add any files which are usually present in an nrelay project, but are missing. For example, if the `.nrelay` file was deleted accidentally, this will cause the CLI to think that the folder is not actually an nrelay project. Running `nrelay fix` will replace the `.nrelay` file so that the project can be run again.
+
+```no-lang
+nrelay fix
+```
+
+Adds any missing files which are required by the CLI.
+
+### update
+
+The update command updates a project's nrelay dependency to the latest version. This is an alias for `npm install --save nrelay@next`.
+
+```no-lang
+nrelay update
+```
+
+Updates the nrelay dependency of the project.
