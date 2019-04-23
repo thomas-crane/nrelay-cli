@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import rimraf from 'rimraf';
 
 /**
  * Creates a new directory at the specified path.
@@ -95,6 +96,22 @@ export function exists(path: string): Promise<boolean> {
         }
       } else {
         process.nextTick(resolve, true);
+      }
+    });
+  });
+}
+
+/**
+ * Removes the file or folder at the given path.
+ * @param path The path of the file or folder to remove.
+ */
+export function rm(path: string): Promise<void> {
+  return new Promise((resolve, reject) => {
+    rimraf(path, (err) => {
+      if (err) {
+        process.nextTick(reject, err);
+      } else {
+        process.nextTick(resolve);
       }
     });
   });
