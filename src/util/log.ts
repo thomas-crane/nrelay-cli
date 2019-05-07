@@ -14,6 +14,12 @@ export function logErr(err: Error | string): void {
   if (err instanceof Error) {
     process.stdout.write(`${NRELAY} ${ERR} ${chalk.magenta('code')} ${err.name}\n`);
     process.stdout.write(`${NRELAY} ${ERR} ${chalk.magenta('message')} ${err.message}\n`);
+    if (err.stack) {
+      process.stdout.write('\n');
+      for (const line of err.stack.split('\n')) {
+        process.stdout.write(`${NRELAY} ${ERR} ${chalk.gray(line)}\n`);
+      }
+    }
   } else {
     process.stdout.write(`${NRELAY} ${ERR} ${err}\n`);
   }
