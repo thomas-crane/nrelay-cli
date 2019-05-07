@@ -62,6 +62,16 @@ yargs
         default: true,
         type: 'boolean',
         describe: 'Load plugins',
+      })
+      .option('log', {
+        default: false,
+        type: 'boolean',
+        describe: 'Create a log file',
+      })
+      .option('pluginPath', {
+        default: 'lib',
+        type: 'string',
+        describe: 'The folder to load plugins from, relative to the project folder',
       });
   }, (args: any) => {
     return fsUtil.exists(cwd('.nrelay')).then((exists) => {

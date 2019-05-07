@@ -1,6 +1,6 @@
 {
   "name": "nrelay-cli",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "A CLI for creating and running nrelay projects.",
   "main": "lib/index.js",
   "preferGlobal": true,
