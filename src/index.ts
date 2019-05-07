@@ -57,6 +57,11 @@ yargs
         default: false,
         type: 'boolean',
         describe: 'Force an update',
+      })
+      .option('plugins', {
+        default: true,
+        type: 'boolean',
+        describe: 'Load plugins',
       });
   }, (args: any) => {
     return fsUtil.exists(cwd('.nrelay')).then((exists) => {
