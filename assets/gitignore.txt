@@ -4,6 +4,9 @@ node_modules/
 # build result
 lib/
 
+# resources
+resources/
+
 # config files
 versions.json
 packets.json
