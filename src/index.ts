@@ -33,7 +33,6 @@ const versionString = [
 yargs
   .scriptName('nrelay')
   .usage('$0 <cmd> [args]')
-  .strict()
   .version(versionString)
   .alias('v', 'version')
   .option('force', {
